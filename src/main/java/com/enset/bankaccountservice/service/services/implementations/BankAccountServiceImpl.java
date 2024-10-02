@@ -56,6 +56,11 @@ public class BankAccountServiceImpl implements IBankAccountService {
 
     @Override
     public void deleteBankAccount(String id) {
-        bankAccountRepository.deleteById(id);
+        if (bankAccountRepository.existsById(id)) {
+            bankAccountRepository.deleteById(id);
+            return;
+        }
+
+        throw new RuntimeException("Account not found");
     }
 }
