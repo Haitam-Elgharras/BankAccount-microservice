@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t bankaccountservice .'
+                    sh 'docker build -t bankaccountservice:latest .'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u haitamelgharras -p ${dockerhubpwd}'
 
                    }
-                   sh 'docker push haitamelgharras/bankaccountservice'
+                   sh 'docker push haitamelgharras/bankaccountservice:latest'
                 }
             }
         }

@@ -85,7 +85,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>haitamelgharras/bankaccountservice</name>
+                        <name>haitamelgharras/bankaccountservice:latest</name>
                     </image>
                     <pullPolicy>IF_NOT_PRESENT</pullPolicy>
 
