@@ -1,6 +1,5 @@
 package com.enset.bankaccountservice.web;
 
-import com.enset.bankaccountservice.dao.entities.BankAccount;
 import com.enset.bankaccountservice.service.dtos.BankAccountRequestDTO;
 import com.enset.bankaccountservice.service.dtos.BankAccountResponseDTO;
 import com.enset.bankaccountservice.service.services.interfaces.IBankAccountService;
