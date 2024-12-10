@@ -1,8 +1,8 @@
 # we need just those because the build will be done in another jenkins stage
 FROM openjdk:17-jdk-alpine
 EXPOSE 8081
-ADD target/bankaccountservice:latest.jar bankaccountservice:latest.jar
-ENTRYPOINT ["java","-jar","/bankaccountservice:latest.jar"]
+ADD target/bankAccountService-0.0.1-SNAPSHOT.jar bankAccountService-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/bankAccountService-0.0.1-SNAPSHOT.jar"]
 
 
 

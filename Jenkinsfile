@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-        maven 'Maven 3.9'
+        maven 'maven_4_0_0'
     }
     stages{
         stage('Build Maven'){
@@ -13,18 +13,18 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker build -t haitamelgharras/bankaccountservice:latest .'
+                    sh 'docker build -t haitamelgharras/bankaccountservice .'
                 }
             }
         }
         stage('Push image to dockerhub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u haitamelgharras -p ${dockerhubpwd}'
 
                    }
-                   sh 'docker push haitamelgharras/bankaccountservice:latest'
+                   sh 'docker push haitamelgharras/bankaccountservice'
                 }
             }
         }
