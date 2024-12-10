@@ -24,7 +24,7 @@ pipeline {
                    sh 'docker login -u haitamelgharras -p ${dockerhubpwd}'
 
                    }
-                   sh 'docker push haitamelgharras/bankaccountservice'
+                   sh 'docker push haitamelgharras/bankaccountservice:latest'
                 }
             }
         }
